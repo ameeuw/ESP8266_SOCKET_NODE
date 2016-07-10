@@ -20,7 +20,7 @@ function Button.new(pin, pressCallback, longPressCallback)
 	local self = setmetatable({}, Button)
 
 	self.pin = pin
-	self.state = 0
+	self.pressed = false
 	self.lastPress = 0
 	self.pressCallback = pressCallback
 	if longPressCallback~=nil then
@@ -56,8 +56,9 @@ end
 
 function Button.onChange(self)
     --print('The pin value has changed to '..gpio.read(self.pin))
-    if gpio.read(self.pin)==0 then
+    if self.pressed == false then
       self.lastPress = tmr.now()
+			self.pressed = true
       --print("lastPress:",self.lastPress)
     else
       if (tmr.now()-self.lastPress)<500000 then
@@ -67,6 +68,7 @@ function Button.onChange(self)
         --print("Long press.")
 				self.longPressCallback()
       end
+			self.pressed = false
     end
 end
 

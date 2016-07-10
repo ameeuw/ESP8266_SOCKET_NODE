@@ -1,0 +1,6 @@
+modules =
+{
+  'MqttClient',
+  'Button',
+  'Socket'
+}

@@ -11,6 +11,12 @@ This is a very early version and will be improved over the next few weeks.
 
 --------------
 
+LED on pin 7
+Relay on pin 6
+Button on pin 3
+
+--------------
+
 Upload the following scripts to your SonOff using a USB to UART (FT232RL, Silabs cp210x) but _do not forget_ to supply 3.3V to VCC. The cp210x modules [found on Banggood](http://www.banggood.com/search/cp2102.html) can be easily converted ([Instructables Link](http://www.instructables.com/id/Mod-a-USB-to-TTL-Serial-Adapter-CP2102-to-program--1/)) using a linear regulator on the 5V line to support the ESP module.
 I use [ESPlorer](http://esp8266.ru/esplorer/) for uploading, starting and configuring my scripts.
 
